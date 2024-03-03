@@ -4,3 +4,264 @@
 *:after {
   box-sizing: border-box;
 }
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+img {
+  height: 100%;
+}
+
+.checkers {
+  display: none;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+.title-left {
+  font-size: 60px;
+}
+
+.title-right {
+  font-size: 30px;
+}
+
+/* Header Styles *********/
+header a, .own-now, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+.siteName {
+  font-size: 2em;
+  text-align: left;
+}
+
+#tools {
+  text-align: right;
+}
+
+#top-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  padding-bottom: .2em;
+}
+/* End of Header Styles *********/
+
+
+/* navigation styles ********/
+nav > ul > li > a {
+  text-decoration: none;
+  color: white;
+  margin: 0 50px; /* Adjust the margin as needed for spacing */
+}
+
+nav > ul {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0;
+}
+
+nav {
+  background-color: black;
+  overflow: hidden;
+  font-size: 25px;
+  display: flex;
+  justify-content: center; 
+  text-align: center; /* Center the items horizontally */
+}
+
+nav a {
+  flex: 1;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: #f73c09;
+  color: rgb(245, 241, 241);
+}
+
+
+/* footer */
+footer {
+  padding: 1em;
+  padding-bottom: .2em;
+}
+
+
+
+/* Start of hero *************************/
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.hero-grid img {
+  width: 100%;
+  height: auto;
+  justify-self: center;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+
+.hero-grid div {
+  background-color: rgba(239, 234, 234, 0.581);
+  color: rgb(2, 204, 249);
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/-1;
+}
+
+.hero-grid .own-today {
+  background-color: rgb(2, 204, 249);
+  color: black;  
+  text-align: center;
+  padding: 1em;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.hero-grid h2 {
+  font-size: 50px;
+  color: rgb(2, 204, 249);
+  text-align: center;
+  padding-left: 1em;
+}
+
+.hero-grid p {
+  font-size: 40px;
+  color: rgb(2, 204, 249);
+  text-align: center;
+  padding-left: 1.5em;
+}
+/* End of hero *************************/
+
+
+/* Start of upgrades ******************/
+.upgrade-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.upgrades {
+  text-align: center;
+}
+
+.upgrade {
+  background-color:rgb(2, 204, 249);
+  border: 2px solid gray;
+  min-height: 5em;
+  text-align: center;
+  margin: .5em;
+  height: 60%;
+}
+
+.upgrades h2 {
+  text-align: left;
+  font-size: 40px;
+}
+
+.upgrade img {
+  padding: .6em;
+}
+/* End of upgrades ******************/
+
+
+/* Start of upgrades ******************/
+.reviews h2 {
+  text-align: left;
+  font-size: 40px;
+}
+
+.reviews ul li {
+  text-align: left;
+  font-size: 25px;
+  padding: 14px 16px;
+}
+
+      
+
+/* End of upgrades ******************/
+
+
+
+
+/* phone ****************************/
+@media screen and (min-width: 700px) {
+  /* body + main + checkerboard */
+  body {
+    background-image: url("/images/site/checkerboard.jpg");
+    background-repeat:repeat;
+    background-size: 35em 35em;
+  }
+  #wrapper {
+    background-color: white;
+    border-radius: 1.2em;
+    border: 3px solid rgb(34, 95, 207);
+    width: 80%;
+    margin: auto;
+    /* display: none; */
+  }
+
+  /* main + nav sizing */
+  main, nav {
+    margin: 1em;
+  }
+
+  /* reviews + upgrades */
+  .extra-grid {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+}
+/* End of phone ****************************/
+
+/* tablet ***************************/
+@media screen and (min-width: 1100px) {
+  #inv-display {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+  #inv-display li {
+    width: 25em;
+  }
+  /* End of tablet ****************************/
+
+
+  /* single car view ******************/
+  #singleVehicleWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  #singleVehicleWrapper img {
+    width: auto;
+    max-height: 14em;
+  }
+}
+/* End of car view ****************************/
+
+/* laptop/desktop *******************/
+@media screen and (min-width: 1700px) {
+  #inv-display {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  #singleVehicleWrapper img {
+    width: auto;
+    max-height: 25em;
+  }
+}
+/* End of laptop/desktop ****************************/
