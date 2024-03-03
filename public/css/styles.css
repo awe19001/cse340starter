@@ -30,6 +30,21 @@ h1 {
   font-size: 30px;
 }
 
+  /* body + main + checkerboard */
+  body {
+    background-image: url("/images/site/checkerboard.jpg");
+    background-repeat:repeat;
+    background-size: 35em 35em;
+  }
+  #wrapper {
+    background-color: white;
+    border-radius: 1.2em;
+    border: 3px solid rgb(2, 204, 249);
+    width: 80%;
+    margin: auto;
+    /* display: none; */
+  }
+
 /* Header Styles *********/
 header a, .own-now, h1, h2, h3, h4, h5, h6 {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -56,10 +71,13 @@ header a, .own-now, h1, h2, h3, h4, h5, h6 {
 
 
 /* navigation styles ********/
-nav > ul > li > a {
-  text-decoration: none;
-  color: white;
-  margin: 0 50px; /* Adjust the margin as needed for spacing */
+nav {
+  background-color: black;
+  overflow: hidden;
+  font-size: 25px;
+  display: flex;
+  justify-content: center; 
+  text-align: center; /* Center the items horizontally */
 }
 
 nav > ul {
@@ -70,27 +88,57 @@ nav > ul {
   padding: 0;
 }
 
-nav {
-  background-color: black;
-  overflow: hidden;
-  font-size: 25px;
+nav > ul > li {
+  padding: 0;
   display: flex;
-  justify-content: center; 
-  text-align: center; /* Center the items horizontally */
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0;
 }
 
-nav a {
-  flex: 1;
-  color: #f2f2f2;
-  text-align: center;
+nav > ul > li > a {
   text-decoration: none;
-  display: inline-block;
+  color: white;
+  margin: 0 50px; /* Adjust the margin as needed for spacing */
+  font-size: 35px;
 }
 
 nav a:hover {
-  background-color: #f73c09;
-  color: rgb(245, 241, 241);
+  color:  rgb(2, 204, 249);
 }
+
+/* End of Navigation ******************/
+
+
+
+/* Start of upgrades ******************/
+.upgrade-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.upgrades {
+  text-align: center;
+}
+
+.upgrade {
+  background-color:rgb(2, 204, 249);
+  border: 2px solid gray;
+  min-height: 5em;
+  text-align: center;
+  margin: .5em;
+  height: 80%;
+}
+
+.upgrades h2 {
+  text-align: left;
+  font-size: 40px;
+}
+
+.upgrade img {
+  padding: .6em;
+}
+/* End of upgrades ******************/
 
 
 /* footer */
@@ -150,15 +198,55 @@ footer {
 }
 /* End of hero *************************/
 
+/* Start of extra-grid ******************/
+.extra-grid {
+  display: flex;
+}
 
-/* Start of upgrades ******************/
-.upgrade-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.reviews, .upgrades {
+  flex: 1; /* Distribute the available space equally between the two grids */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+  padding: 10px; /* Add padding for better spacing */
+}
+
+.reviews {
+  order: 2;
 }
 
 .upgrades {
+  order: 1;
+}
+
+/****/
+
+/* Start of reviews ******************/
+.reviews h2 {
+  text-align: right;
+  font-size: 40px;
+}
+
+.reviews ul li {
+  text-align: left;
+  font-size: 25px;
+  padding: 14px 16px;
+}
+/* End of reviews ******************/
+
+
+/* Start of upgrades ******************/
+.upgrades {
   text-align: center;
+  width: 50%;
+}
+
+.upgrades h2 {
+  text-align: left;
+  font-size: 40px;
+}
+
+.upgrade-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .upgrade {
@@ -167,12 +255,7 @@ footer {
   min-height: 5em;
   text-align: center;
   margin: .5em;
-  height: 60%;
-}
-
-.upgrades h2 {
-  text-align: left;
-  font-size: 40px;
+  height: 80%;
 }
 
 .upgrade img {
@@ -181,7 +264,11 @@ footer {
 /* End of upgrades ******************/
 
 
-/* Start of upgrades ******************/
+/* Start of reviews ******************/
+.reviews {
+  width: 50%;
+}
+
 .reviews h2 {
   text-align: left;
   font-size: 40px;
@@ -193,66 +280,222 @@ footer {
   padding: 14px 16px;
 }
 
-      
-
-/* End of upgrades ******************/
+/* End of reviews ******************/
 
 
 
 
-/* phone ****************************/
-@media screen and (min-width: 700px) {
-  /* body + main + checkerboard */
-  body {
-    background-image: url("/images/site/checkerboard.jpg");
-    background-repeat:repeat;
-    background-size: 35em 35em;
+/* samsung galaxy S20 Ultra phone Dimension 412x915****************************/
+@media only screen and (max-width: 412px) {
+ body {
+  height: auto;
+ }
+
+
+ #wrapper {
+  background-color: white;
+  height: auto;
+  width: 100%;
+}
+
+  h1 {
+    font-size: 25px;
   }
-  #wrapper {
-    background-color: white;
-    border-radius: 1.2em;
-    border: 3px solid rgb(34, 95, 207);
-    width: 80%;
-    margin: auto;
-    /* display: none; */
+  
+  .title-left {
+    font-size: 15px;
+  }
+  
+  .title-right {
+    font-size: 15px;
+    margin-right: 100px;
   }
 
-  /* main + nav sizing */
-  main, nav {
-    margin: 1em;
+  .siteName {
+    font-size: .5em;
+    text-align: left;
   }
 
-  /* reviews + upgrades */
-  .extra-grid {
+  /* navigation styles ********/
+  nav {
+    background-color: black;
+    overflow: hidden;
+    font-size: 5px;
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: center; 
+    text-align: left; /* Center the items horizontally */
+    max-width: 400px;
+  }
+
+  nav > ul {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
+    padding: 0;
+  
   }
+
+  nav > ul > li {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+    max-width: 300px;
+  }
+
+  nav > ul > li > a {
+    text-decoration: none;
+    color: rgb(250, 244, 244);
+    margin: 0 5px; /* Adjust the margin as needed for spacing */
+    margin-right: 15px;
+    max-width: 300px;
+    font-size: 10px; 
+  }   
+
+nav a:hover {
+  color:  rgb(2, 204, 249);
 }
-/* End of phone ****************************/
-
-/* tablet ***************************/
-@media screen and (min-width: 1100px) {
-  #inv-display {
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-  }
-  #inv-display li {
-    width: 25em;
-  }
-  /* End of tablet ****************************/
+/* End of Nav****************/
 
 
-  /* single car view ******************/
-  #singleVehicleWrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-  #singleVehicleWrapper img {
-    width: auto;
-    max-height: 14em;
-  }
+/* Start of hero *************************/
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  max-width: 350px;
+  height: 180px;
 }
-/* End of car view ****************************/
+
+.hero-grid img {
+  margin-top: 50px;
+  width: 80%;
+  height: 50%;
+  justify-self: center;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+
+.hero-grid div {
+  background-color: rgba(239, 234, 234, 0.581);
+  color: rgb(2, 204, 249);
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 40%;
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  height: 150px;
+}
+
+.hero-grid .own-today {
+  background-color: rgb(2, 204, 249);
+  color: black;  
+  text-align: center;
+  padding: 1em;
+  font-size: 10px;
+  font-weight: 500;
+  width: 100%;
+  height: 20%;
+}
+
+.hero-grid h2 {
+  font-size: 14px;
+  color: rgb(2, 204, 249);
+  text-align: center;
+  padding-left: 1em;
+}
+
+.hero-grid p {
+  font-size: 10px;
+  color: rgb(2, 204, 249);
+  text-align: center;
+  padding-left: 1.5em;
+}
+/* End of hero *************************/
+
+
+.extra-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews, .upgrades {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 300%;
+}
+
+
+/* Start of reviews ******************/
+/*left to right***********************/
+.reviews{
+  order: 1; /* Set the order to 1 for the left grid, making it appear below the right grid */
+  margin-left: 0;
+  max-width: 300px; /* Set a maximum width for the reviews section */
+  height: 250px;
+  width: 400px;
+}
+.reviews h2 {
+  text-align: left;
+  font-size: 20px;
+}
+
+.reviews ul{
+  text-align: left;
+  font-size: 12px;
+  padding: 7px 8px;
+  width: 300px;
+}
+
+.reviews ul li {
+  text-align: left;
+  font-size: 12px;
+  padding: 7px 8px;
+  width: 280px;
+}
+
+
+/* End of reviews ******************/
+
+
+/* Start for the upgrades section *************/
+.upgrades {
+  margin-top: 5px; /* Add margin to separate the two sections */
+  margin-right: 10px;
+  height: 300px;
+  width: 380px;
+ }
+
+ .upgrades h2 {
+  text-align: left;
+  font-size: 20px;
+  width: 280px;
+}
+
+.upgrade-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 300px;
+}
+
+.upgrade {
+  background-color:rgb(2, 204, 249);
+  border: 2px solid gray;
+  min-height: 3em;
+  max-width: 100px; 
+  text-align: center;
+  margin: .5em;
+  height: 80%;
+}
+}
+/* End of Upgrades*************/
+/* End of samsung galaxy S20 Ultra phone Dimension 412x915 ****************************/
+
+
+
 
 /* laptop/desktop *******************/
 @media screen and (min-width: 1700px) {
@@ -264,4 +507,5 @@ footer {
     max-height: 25em;
   }
 }
+
 /* End of laptop/desktop ****************************/
