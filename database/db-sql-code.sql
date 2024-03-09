@@ -250,3 +250,23 @@ VALUES   (
     'White',
     5
   );
+
+
+
+-- This is from assignment2.sql
+-- 4
+-- modify the "GM Hummer" record 
+-- ('a huge interior' => 'small interiors')
+UPDATE inventory
+SET inv_description = REPLACE(inv_description, 'a huge interior', 'a small interior')
+WHERE inv_id = 10;
+
+
+
+-- 6
+-- update image paths
+UPDATE inventory
+SET inv_thumbnail = REPLACE(inv_thumbnail, '/images/', '/images/vehicles/'), 
+    inv_image = REPLACE(inv_image, '/images/', '/images/vehicles/')
+WHERE inv_thumbnail NOT LIKE '/images/vehicles/%'
+AND inv_image NOT LIKE '/images/vehicles/%';
