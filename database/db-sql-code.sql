@@ -1,11 +1,11 @@
--- Table structure for table 'type'
-CREATE TYPE public.account_type AS ENUM
-    ('Client', 'Employee', 'Admin');
-
 ALTER TYPE public.account_type
     OWNER TO cse340awe;
 
 
+
+-- Table structure for table 'type'
+CREATE TYPE public.account_type AS ENUM
+    ('Client', 'Employee', 'Admin');
 
 
 
@@ -15,7 +15,6 @@ CREATE TABLE public.classification (
 	classification_name CHARACTER VARYING NOT NULL,
 	CONSTRAINT classification_pk PRIMARY KEY (classification_id)
 );
-
 
 
 
