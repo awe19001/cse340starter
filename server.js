@@ -11,6 +11,8 @@ const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
 
+const baseController = require("./controllers/baseController")
+
 
 /* ***********************
  * View Engine and Templates
@@ -28,10 +30,13 @@ app.use(static)
 app.use(static)
 
 
+//Index route   (THIS ONE IS ALTERED BELOW)
+//app.get("/", function(req, res){
+//  res.render("index", {title: "Home"})
+//})
+
 //Index route
-app.get("/", function(req, res){
-  res.render("index", {title: "Home"})
-})
+app.get("/", baseController.buildHome)
 
 
 /* ***********************
