@@ -29,6 +29,7 @@ Util.getNav = async function (req, res, next) {
 
 /* **************************************
 * Build the classification view HTML
+* Unit 3, Activities
 * ************************************ */
 Util.buildClassificationGrid = async function(data){
   let grid
