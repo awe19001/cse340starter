@@ -9,9 +9,10 @@ const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
 const app = express()
-const static = require("./routes/static")
-
 const baseController = require("./controllers/baseController")
+const utilities = require("./utilities/")
+
+
 
 
 /* ***********************
@@ -27,16 +28,11 @@ app.use(static)
 /* ***********************
  * Routes
  *************************/
-app.use(static)
-
-
-//Index route   (THIS ONE IS ALTERED BELOW)
-//app.get("/", function(req, res){
-//  res.render("index", {title: "Home"})
-//})
+// static route
+app.use(require("./routes/static"))
 
 //Index route
-app.get("/", baseController.buildHome)
+app.get("/", utilities.handleErrors(baseController.buildHome))
 
 // Inventory routes
 app.use("/inv", inventoryRoute)
