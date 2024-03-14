@@ -22,8 +22,6 @@ app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout") // not at views root
 
-app.use(static)
-
 
 /* ***********************
  * Routes
@@ -31,11 +29,12 @@ app.use(static)
 // static route
 app.use(require("./routes/static"))
 
-//Index route
-app.get("/", baseController.buildHome)
+// Index route
+app.get("/", utilities.handleErrors(baseController.buildHome))
 
 // Inventory routes
-app.use("/inv", inventoryRoute)
+//app.use("/inv", inventoryRoute)
+app.use("/inv", require("./routes/inventoryRoute"))
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
