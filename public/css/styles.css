@@ -281,6 +281,87 @@ footer {
 }
 
 /* End of reviews ******************/
+/* class pages */
+#inv-display {
+  display: grid;
+  gap: 1em;
+  list-style: none;
+  /* padding: 0; */
+  padding: 1em;
+  justify-content: center;
+}
+
+#inv-display li img {
+  /* height: 100%; */
+  max-height: 50%;
+}
+#inv-display li {
+  /* height: 100%; */
+  /* width: 100%; */
+  max-width: 25em;
+  background-color: black;
+  border-radius: 1.5em;
+  /* margin: 1em; */
+  padding: 2em;
+  text-align: center;
+}
+
+.namePrice {
+  color: white;
+}
+.namePrice h2 > a {
+  font-family: inherit;
+  color: white;
+  text-decoration: none;
+}
+
+#singleVehicleWrapper {
+  display: grid;
+}
+#singleVehicleWrapper img {
+  width: 99%;
+  margin: auto;
+}
+#singleVehicleDetails {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  list-style: none;
+  padding: 0;
+}
+#singleVehicleDetails li:nth-child(even) {
+  background-color: gainsboro;
+}
+#singleVehicleDetails li h2 {
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+#singleVehicleDetails li {
+  font-size: 1.2em;
+  padding: .8em;
+  border-radius: .5em;
+}
+
+
+/*  START HERE week3  */
+
+
+
+
+
+
+
+
+
+
+
+/*  END HERE week3  */
+
+
+
+
+
+
+
 
 
 
